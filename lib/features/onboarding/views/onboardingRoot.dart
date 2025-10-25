@@ -5,6 +5,7 @@ import 'package:islami/features/onboarding/views/onboarding2.dart';
 import 'package:islami/features/onboarding/views/onboarding3.dart';
 import 'package:islami/features/onboarding/views/onboarding4.dart';
 import 'package:islami/features/onboarding/views/onboarding5.dart';
+import 'package:islami/root.dart';
 import 'package:islami/shared/customText.dart';
 
 class OnboardingRoot extends StatefulWidget {
@@ -17,7 +18,8 @@ class OnboardingRoot extends StatefulWidget {
 class _OnboardingRootState extends State<OnboardingRoot> {
   final PageController controller = PageController();
   int currentPage = 0;
-  final List<Widget> pages = [    //5 Screens for onboarding
+  final List<Widget> views  = [
+    //5 Screens for onboarding
     Onboarding1(),
     Onboarding2(),
     Onboarding3(),
@@ -34,7 +36,7 @@ class _OnboardingRootState extends State<OnboardingRoot> {
             child: PageView(
               controller: controller,
               onPageChanged: (index) => setState(() => currentPage = index),
-              children: pages  //5 Screens for onboarding
+              children: views, //5 Screens for onboarding
             ),
           ),
           // Navigation Controls
@@ -50,7 +52,10 @@ class _OnboardingRootState extends State<OnboardingRoot> {
                           curve: Curves.ease,
                         )
                       : null,
-                  child:Customtext(text: 'Back', color: AppColors.goldPrimaryColor,)
+                  child: Customtext(
+                    text: 'Back',
+                    color: AppColors.goldPrimaryColor,
+                  ),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -62,22 +67,38 @@ class _OnboardingRootState extends State<OnboardingRoot> {
                       width: isActive ? 20 : 8,
                       height: 8,
                       decoration: BoxDecoration(
-                        color: isActive ? AppColors.goldPrimaryColor : Colors.grey,
+                        color: isActive
+                            ? AppColors.goldPrimaryColor
+                            : Colors.grey,
                         borderRadius: BorderRadius.circular(4),
                       ),
                     );
                   }),
                 ),
                 TextButton(
-                  onPressed: currentPage < 4
-                      ? () => controller.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.ease,
+                  onPressed: () {
+                    if (currentPage < 4) {
+                      controller.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.ease,
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Root()),
+                      );
+                    }
+                  },
+                  child: currentPage == 4
+                      ? // Finish word is on last onboarding screen (Not Next word)
+                        Customtext(
+                          text: 'Finish',
+                          color: AppColors.goldPrimaryColor,
                         )
-                      : null,
-                  child:currentPage==4?   // Finish is on last onboarding screen (Not Next)
-                  Customtext(text: 'Finish', color: AppColors.goldPrimaryColor,):
-                  Customtext(text: 'Next',color: AppColors.goldPrimaryColor,)
+                      : Customtext(
+                          text: 'Next',
+                          color: AppColors.goldPrimaryColor,
+                        ),
                 ),
               ],
             ),

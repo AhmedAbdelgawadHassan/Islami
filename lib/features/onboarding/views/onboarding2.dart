@@ -15,9 +15,9 @@ class Onboarding2 extends StatelessWidget {
            Spacer(),
             Center(child: Image(image: AssetImage('assets/images/onboarding/مسجد.png'),width: 400,height: 415,)),
             Spacer(),
-            Customtext(text: 'Welcome To Islami',fontSize: 24,),
+            Customtext(text: 'Welcome To Islami',fontSize: 20,),
             Spacer(flex: 2,),
-            Customtext(text: 'We Are Very Excited To Have You In Our \nCommunity',maxLines: 2,fontSize: 20,),
+            Customtext(text: 'We Are Very Excited To Have You In Our \nCommunity',maxLines: 2,fontSize: 18,),
             Spacer()
           ],
         )

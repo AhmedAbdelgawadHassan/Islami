@@ -15,11 +15,11 @@ class Onboarding5 extends StatelessWidget {
            Spacer(),
             Center(child: Image(image: AssetImage('assets/images/onboarding/راديو.png'),width: 400,height: 415,)),
             Spacer(),
-            Customtext(text:'Holy Quran Radio',fontSize: 24,),  // اذاعة القرآن الكريم
+            Customtext(text:'Holy Quran Radio',fontSize: 20,),  // اذاعة القرآن الكريم
             Spacer(flex: 2,),
             Padding(
               padding:EdgeInsets.symmetric(horizontal: 5),
-              child: Customtext(text: 'You can listen to the Holy Quran Radio\n through the application for free and easily',fontSize: 20,maxLines: 2,)),
+              child: Customtext(text: 'You can listen to the Holy Quran Radio\n through the application for free and easily',fontSize: 18,maxLines: 2,)),
             Spacer()
           ],
         )

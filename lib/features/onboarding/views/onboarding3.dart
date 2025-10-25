@@ -16,11 +16,11 @@ class Onboarding3 extends StatelessWidget {
            Spacer(),
             Center(child: Image(image: AssetImage('assets/images/onboarding/قرآن كريم.png'),width: 400,height: 415,)),
             Spacer(),
-            Customtext(text:'Reading the Quran',fontSize: 24,),
+            Customtext(text:'Reading the Quran',fontSize: 20,),
             Spacer(flex: 2,),
             Padding(
               padding:EdgeInsets.symmetric(horizontal: 5),
-              child: Customtext(text: 'Read, and your Lord is the Most Generous',fontSize: 20,)),
+              child: Customtext(text: 'Read, and your Lord is the Most Generous',fontSize: 18,)),
             Spacer()
           ],
         )

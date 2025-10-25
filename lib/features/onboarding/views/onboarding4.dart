@@ -15,11 +15,11 @@ class Onboarding4 extends StatelessWidget {
            Spacer(),
             Center(child: Image(image: AssetImage('assets/images/onboarding/سبحة.png'),width: 400,height: 415,)),
             Spacer(),
-            Customtext(text:'Bearish',fontSize: 24,),//سبحة
+            Customtext(text:'Bearish',fontSize: 20,),//سبحة
             Spacer(flex: 2,),
             Padding(
               padding:EdgeInsets.symmetric(horizontal: 5),
-              child: Customtext(text: 'Praise the name of your Lord, the Most \nHigh',fontSize: 20,maxLines: 2,)),  // سبح اسم ربك الأعلي 
+              child: Customtext(text: 'Praise the name of your Lord, the Most \nHigh',fontSize: 18,maxLines: 2,)),  // سبح اسم ربك الأعلي 
             Spacer()
           ],
         )
